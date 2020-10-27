@@ -99,7 +99,7 @@ async function extract(
     }
 
     if (originalFilename.endsWith('tar.xz')) {
-      await tc.extractTar(sdkFile, sdkCache, 'xz');
+      await tc.extractTar(sdkFile, sdkCache);
     } else {
       await tc.extractZip(sdkFile, sdkCache);
     }
