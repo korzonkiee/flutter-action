@@ -13,7 +13,7 @@ export async function getFlutter(
   const platform = release.getPlatform();
   const useMaster = channel == 'master';
 
-  const {version: selected, downloadUrl} = await release.determineVersion(
+  const { version: selected, downloadUrl } = await release.determineVersion(
     version,
     useMaster ? 'dev' : channel,
     platform
@@ -99,7 +99,7 @@ async function extract(
     }
 
     if (originalFilename.endsWith('tar.xz')) {
-      await tc.extractTar(sdkFile, sdkCache, 'x');
+      await tc.extractTar(sdkFile, sdkCache, 'xz');
     } else {
       await tc.extractZip(sdkFile, sdkCache);
     }
